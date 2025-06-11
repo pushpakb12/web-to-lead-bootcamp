@@ -6,14 +6,21 @@
     <title>Web To Lead Farm</title>
     <link  rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
 </head>
 <body>
     
-<h1> Create Lead</h1>
+<h1> CREATE Lead </h1>
 
 <form 
 action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DF9000001FWKo"
  method="POST"  onsubmit="beforesubmit()">
+
+ <input 
+ type=hidden 
+ name='captcha_settings' 
+ value='{"keyname":"WebToLeadbootcamp","fallback":"true","orgId":"00DF9000001FWKo","ts":""}'>
 
 <input type=hidden name="oid" value="00DF9000001FWKo" />
 
@@ -38,8 +45,7 @@ type="text"
 /><br>
 
 <label for="last_name">Last Name</label>
-<input  
-id="last_name" 
+<input  id="last_name" 
 maxlength="80" 
 name="last_name" 
 size="20" 
@@ -62,6 +68,9 @@ type="text"
 <!-- Lead Date:<span class="dateInput dateOnlyInput">
  <input  id="00NF900000F5naw" name="00NF900000F5naw" size="12" type="text" /></span><br> -->
 
+ <div 
+ class="g-recaptcha" 
+ data-sitekey="6LfwHF0rAAAAAMDOe04mfQtQv067_hksOQx496eF"></div><br>
 <input type="submit" name="submit" class="submit">
 
 </form>
